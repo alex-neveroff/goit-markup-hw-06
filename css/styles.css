@@ -67,6 +67,10 @@ h3 {
 	margin: 0;
 }
 
+textarea {
+	resize: none;
+}
+
 .container {
 	width: 1200px;
 
@@ -105,8 +109,6 @@ h3 {
 	font-family: "Raleway";
 	font-size: 26px;
 	line-height: 1.19;
-
-	outline: none;
 }
 .logo > .logo-header {
 	color: var(--logo-black-color);
@@ -155,7 +157,7 @@ h3 {
 	color: var(--header-color);
 }
 
-.link.menu-current {
+.menu-current {
 	color: var(--hover-blue-color);
 	position: relative;
 }
@@ -238,7 +240,7 @@ h3 {
 	background-color: var(--hover-blue-color);
 	color: var(--secondary-color);
 
-	border: none;
+	border-color: var(--hover-blue-color);
 	border-radius: 4px;
 
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -462,7 +464,8 @@ h3 {
 
 	border-radius: 4px;
 
-	transition: color 250ms var(--time-transition), border-color 250ms var(--time-transition);
+	transition: color 250ms var(--time-transition), outline-color 250ms var(--time-transition),
+		border-color 250ms var(--time-transition);
 }
 
 .icon-clients {
@@ -475,7 +478,7 @@ h3 {
 	color: var(--hover-blue-color);
 	border-color: var(--hover-blue-color);
 
-	outline: none;
+	outline-color: var(--hover-blue-color);
 }
 
 /* Для фільтра портфоліо*/
@@ -599,7 +602,6 @@ h3 {
 .portfolio-link:hover,
 .portfolio-link:focus {
 	box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06), 0px 1px 1px rgba(0, 0, 0, 0.12);
-
 	outline: none;
 }
 
@@ -742,6 +744,8 @@ footer */
 	border: 1px solid var(--border-form);
 	border-radius: 4px;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+	transition: border-color 250ms var(--time-transition), outline 250ms var(--time-transition);
 }
 
 .footer-input::placeholder {
@@ -750,6 +754,7 @@ footer */
 
 .footer-input:hover,
 .footer-input:focus {
+	border-color: var(--hover-blue-color);
 	outline: 1px solid var(--hover-blue-color);
 }
 
@@ -777,14 +782,14 @@ footer */
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 
 	cursor: pointer;
+
+	transition: background-color 250ms var(--time-transition);
 }
 
 .footer-submit:hover,
 .footer-submit:focus {
 	background-color: var(--button-hover-color);
-}
-
-.footer-submit-icon {
+	outline: none;
 }
 
 /* Модальне вiкно */
@@ -818,15 +823,15 @@ footer */
 	position: absolute;
 	top: 50%;
 	left: 50%;
+	transform: translate(-50%, -50%) scale(1);
 
-	height: 536px;
+	height: 581px;
 	width: 528px;
+	padding: 40px;
 
 	background-color: var(--secondary-color);
 	border-radius: 4px;
 	box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12);
-
-	transform: translate(-50%, -50%) scale(1);
 
 	transition: transform 500ms var(--time-transition), box-shadow 500ms var(--time-transition);
 }
@@ -849,15 +854,206 @@ footer */
 
 	cursor: pointer;
 
-	transition: border-color 250ms var(--time-transition), color 250ms var(--time-transition);
+	transition: border-color 250ms var(--time-transition), outline 250ms var(--time-transition),
+		color 250ms var(--time-transition);
 }
 
 .modal-button:hover,
 .modal-button:focus {
 	border-color: var(--hover-blue-color);
 	color: var(--hover-blue-color);
+
+	outline: 1px solid var(--hover-blue-color);
 }
 
 .icon-modal {
 	fill: currentColor;
+}
+.modal-form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.modal-text {
+	margin-bottom: 12px;
+
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 1.15;
+
+	color: var(--header-color);
+}
+
+.form-field {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+
+	margin-bottom: 10px;
+}
+
+.modal-label {
+	margin-bottom: 4px;
+
+	font-size: 12px;
+	line-height: 1.17;
+	letter-spacing: 0.01em;
+}
+
+.modal-input {
+	height: 40px;
+	padding-left: 42px;
+
+	font-family: inherit;
+	font-size: 16px;
+	line-height: 1.25;
+	letter-spacing: 0.03em;
+
+	color: var(--logo-black-color);
+	border: 1px solid rgba(33, 33, 33, 0.2);
+	border-radius: 4px;
+
+	transition: border-color 250ms var(--time-transition), outline 250ms var(--time-transition);
+}
+
+.modal-input::placeholder {
+	color: rgba(117, 117, 117, 0.5);
+}
+
+.modal-icon {
+	position: absolute;
+	left: 12px;
+	top: 29px;
+
+	fill: var(--logo-black-color);
+
+	transition: fill 250ms var(--time-transition);
+}
+
+.modal-input:focus {
+	border-color: var(--hover-blue-color);
+	outline: 1px solid var(--hover-blue-color);
+}
+
+.modal-input:focus + .modal-icon {
+	fill: var(--hover-blue-color);
+}
+
+.form-textarea {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+
+	margin-bottom: 20px;
+}
+
+.modal-textarea {
+	padding-left: 16px;
+
+	font-family: inherit;
+	font-size: 12px;
+	line-height: 1.17;
+	letter-spacing: 0.01em;
+
+	color: var(--logo-black-color);
+	border: 1px solid rgba(33, 33, 33, 0.2);
+	border-radius: 4px;
+
+	transition: border-color 250ms var(--time-transition), outline 250ms var(--time-transition);
+}
+
+.modal-textarea::placeholder {
+	color: rgba(117, 117, 117, 0.5);
+}
+
+.modal-textarea:focus {
+	border-color: var(--hover-blue-color);
+	outline: 1px solid var(--hover-blue-color);
+}
+
+.modal-checkbox {
+	position: relative;
+	width: 100%;
+
+	margin-bottom: 30px;
+}
+
+.checkbox-text {
+	font-size: 14px;
+	line-height: 1.71;
+	letter-spacing: 0.03em;
+
+	padding-left: 42px;
+}
+
+.checkbox-link {
+	color: var(--hover-blue-color);
+
+	cursor: pointer;
+}
+
+.checkbox {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+}
+
+.checkbox-icon {
+	position: absolute;
+	left: 12px;
+	top: 50%;
+	transform: translate(calc(-50% + 12px), -50%);
+	display: block;
+
+	border: 2px solid var(--header-color);
+	border-radius: 2px;
+
+	transition: border-color 250ms var(--time-transition);
+
+	cursor: pointer;
+}
+
+.checkbox:checked + .checkbox-icon {
+	border-color: transparent;
+	background-color: var(--hover-blue-color);
+}
+
+.modal-submit {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	width: 200px;
+	height: 50px;
+
+	font-family: inherit;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 1.875;
+	letter-spacing: 0.06em;
+
+	color: var(--secondary-color);
+	background-color: var(--hover-blue-color);
+	border-color: var(--hover-blue-color);
+
+	border-radius: 4px;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+	cursor: pointer;
+
+	transition: background-color 250ms var(--time-transition);
+}
+
+.modal-submit:hover,
+.modal-submit:focus {
+	background-color: var(--button-hover-color);
+	outline: none;
 }
