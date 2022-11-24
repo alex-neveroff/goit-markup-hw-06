@@ -181,7 +181,7 @@ textarea {
 .header-contacts .link:focus {
 	color: var(--hover-blue-color);
 
-	outline: none;
+	outline: transparent;
 }
 
 .icon-mail,
@@ -252,7 +252,7 @@ textarea {
 .hero .button:focus {
 	background-color: var(--button-hover-color);
 
-	outline: none;
+	outline: transparent;
 }
 
 /* Заховані заголовки */
@@ -431,7 +431,7 @@ textarea {
 	color: var(--secondary-color);
 	background-color: var(--hover-blue-color);
 
-	outline: none;
+	outline: transparent;
 }
 .social-net-icon {
 	display: block;
@@ -519,7 +519,7 @@ textarea {
 
 	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 3px 1px rgba(0, 0, 0, 0.1);
 
-	outline: none;
+	outline: transparent;
 }
 
 .filter-current {
@@ -602,7 +602,7 @@ textarea {
 .portfolio-link:hover,
 .portfolio-link:focus {
 	box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06), 0px 1px 1px rgba(0, 0, 0, 0.12);
-	outline: none;
+	outline: transparent;
 }
 
 .portfolio-link:hover .portfolio-card-overlay,
@@ -647,7 +647,7 @@ footer */
 .footer-link-contacts:focus {
 	color: var(--hover-blue-color);
 
-	outline: none;
+	outline: transparent;
 }
 
 .footer-adress,
@@ -662,7 +662,7 @@ footer */
 	margin-bottom: 9px;
 }
 
-.footer-item-contacts {
+.footer-link-contacts {
 	color: var(--adress-footer-color);
 }
 
@@ -697,7 +697,7 @@ footer */
 .footer-social-net-link:focus {
 	background-color: var(--hover-blue-color);
 
-	outline: none;
+	outline: transparent;
 }
 .footer-social-net-icon {
 	display: block;
@@ -789,7 +789,7 @@ footer */
 .footer-submit:hover,
 .footer-submit:focus {
 	background-color: var(--button-hover-color);
-	outline: none;
+	outline: transparent;
 }
 
 /* Модальне вiкно */
@@ -1055,5 +1055,5 @@ footer */
 .modal-submit:hover,
 .modal-submit:focus {
 	background-color: var(--button-hover-color);
-	outline: none;
+	outline: transparent;
 }
